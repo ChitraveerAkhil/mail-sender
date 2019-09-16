@@ -1,0 +1,6 @@
+Message From The Customer,
+First Name: $fname
+Last Name: $lname
+Email: $emailId
+Contact No.: $contactNo
+Message: $message
