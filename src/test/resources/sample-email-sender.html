@@ -2,42 +2,14 @@
 <html>
     <body>
         <form name= "contactForm" class="contact-form">
-
-          <div class="section-title text-center mb-5">
             <span class="sub-title mb-2 d-block">Get In Touch</span>
             <h2 class="title text-primary">Contact Us</h2>
-          </div>
-
-          <div class="row mb-4">
-            <div class="col-md-6 mb-4 mb-md-0">
-              <input type="text" class="form-control" id="fName" placeholder="First name">
-            </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" id="lName" placeholder="Last name">
-            </div>
-          </div>
-            
-            <div class="row mb-4">
-            <div class="col-md-6 mb-4 mb-md-0">
-              <input type="text" class="form-control" id="contactNo" placeholder="Contact Number">
-            </div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" id="emailId" placeholder="Email">
-            </div>
-          </div>
-
-          <div class="row mb-4">
-            <div class="col-12">
-              <textarea class="form-control" id="message" cols="30" rows="10" name="message"   placeholder="Message"></textarea>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-12">
-              <button type="button" onclick="sendMail()" class="btn btn-primary btn-md">Send Message</button>
-            </div>
-          </div>
-
+            <input type="text" class="form-control" id="fName" placeholder="First name">
+            <input type="text" class="form-control" id="lName" placeholder="Last name">
+            <input type="text" class="form-control" id="contactNo" placeholder="Contact Number">
+            <input type="text" class="form-control" id="emailId" placeholder="Email">
+            <textarea class="form-control" id="message" cols="30" rows="10" name="message"   placeholder="Message"></textarea>
+            <button type="button" onclick="sendMail()" class="btn btn-primary btn-md">Send Message</button>
         </form> 
         
         <script>
@@ -48,7 +20,6 @@
                 var contactNo = document.getElementById("contactNo").value;
                 var emailId = document.getElementById("emailId").value;
                 var message = document.getElementById("message").value;
-                // action="http://localhost:8080/emailSender/contactForm"  method="get" 
                 
                 var contactFormMailUrl = 'http://localhost:8080/emailSender/contactForm';                
                 var data = {};
