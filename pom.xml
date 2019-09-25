@@ -63,6 +63,7 @@
 				<configuration>
 					<version>1</version>
 				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
