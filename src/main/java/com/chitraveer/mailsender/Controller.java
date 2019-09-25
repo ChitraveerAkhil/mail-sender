@@ -23,15 +23,13 @@ public class Controller {
 	// final Resource fileResource =
 	// resourceLoader.getResource("classpath:templates/emailBody.vm");
 
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
-	@PostMapping(path="/contactForm")
-	public ResponseEntity<?> mailSender(@RequestBody MailProcessingPojo processingPojo)
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
+	@PostMapping(path = "/contactForm")
+	public ResponseEntity<?> mailSender(@RequestBody ProcessingPojo processingPojo)
 			throws ResourceNotFoundException, ParseErrorException, IOException {
-//		MailProcessingPojo processingPojo = new MailProcessingPojo(fname, lname, emailId, contactNo, message,
-//				MailSenderConstants.CONTACT_FORM, MailSenderConstants.CONTACT_FORM_TEMPLATE_PATH);
-		processingPojo.setTemplatePath(MailSenderConstants.CONTACT_FORM_TEMPLATE_PATH);
-		processingPojo.setSubject(MailSenderConstants.CONTACT_FORM);
-		processor.formAndSendMail(processingPojo);
+		MailProcessingPojo mailProcessingPojo = new MailProcessingPojo(processingPojo, MailSenderConstants.CONTACT_FORM,
+				MailSenderConstants.CONTACT_FORM_TEMPLATE_PATH);
+		processor.formAndSendMail(mailProcessingPojo);
 		return ResponseEntity.ok().build();
 	}
 }
